@@ -16,7 +16,7 @@ procuro o arquivo (bash# find / -name pg_hba.conf), copio e colo a primeira loca
 (ou anoto a localização/path) e saio do container, copio o arquivo para a máquina host (docker cp postgresql:/var/lib/postgresql/data/pg_hba.conf .)
 altero a parte de METHOD para md5 e salvo o arquivo para que ele seja usuado no build do Dockerfile.
 
-  Se quiser evitar essa dor de cabeça/passo desnecessário apenas copie o conteúdo do arquivo no repositório
+  Se quiser evitar essa dor de cabeça/passo desnecessário apenas copie o conteúdo do arquivo no repositório (build_postgres\postgresql)
 e crie esse aquivo (pg_hba.conf) na sua máquina, sempre lembrando de especificar corretamente o path no Dockerfile.
 
 Depois só precisei construir o network e os containers (docker-compose up -d --build).
