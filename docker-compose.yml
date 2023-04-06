@@ -1,0 +1,45 @@
+version: "3"
+services:
+
+  postgres_db:
+    image: postgres:13.1-alpine
+
+    container_name: postgres_db
+
+    environment:
+      PGDATA: /var/lib/postgresql/data/api_data/
+      POSTGRES_USER: guest
+      POSTGRES_PASSWORD: senha_guest
+
+    build: ./build_postgres
+
+    ports:
+      - "5432:5432"
+
+    networks:
+      - api_network
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/api_data
+
+  api:
+    container_name: api_spring
+
+    image: maven
+
+    build: ./build_maven
+
+    ports:
+      - "8080:8080"
+
+    depends_on:
+      - postgres_db
+
+    networks:
+      - api_network
+
+networks:
+  api_network:
+
+volumes:
+  postgres_data:

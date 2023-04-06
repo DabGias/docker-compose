@@ -1,0 +1,10 @@
+br\com\fiap\repository\TreinadorRepository.class
+br\com\fiap\model\Treinador.class
+br\com\fiap\Main.class
+br\com\fiap\controller\TreinadorController.class
+br\com\fiap\controller\AtletaController.class
+br\com\fiap\controller\TreinoController.class
+br\com\fiap\model\Atleta.class
+br\com\fiap\model\Treino.class
+br\com\fiap\repository\AtletaRepository.class
+br\com\fiap\repository\TreinoRepository.class
